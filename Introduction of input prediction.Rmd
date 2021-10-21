@@ -1,0 +1,61 @@
+---
+title: "Input predictor"
+author: "Jun"
+date: "10/21/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+The "Input predictor" is a Shiny app that predicts the most probable word next to the input phase.  
+
+Input predictor link: "https://liujun0402.shinyapps.io/Input_prediction/"
+
+Github link: "https://github.com/lj231024/Input-predictor"
+
+
+
+## How to use?
+
+1. Enter a text phrase into the "Enter text phrase without last word:" block.  
+2. Choose a mode.  
+3. Click "Submit" button
+4. Wait several second for processing
+5. check the word in "Predicted next word:" block. 
+6. The context will shown in "Predicted phrase:"block.
+
+## About the mode
+
+1. Fast mode predicts the most probable word using 1% phrase dataset that combined Twitter, Blog and News.
+
+2. Compete mode predicts the most probable word using 100% phrase dataset that combined Twitter, Blog and News.
+
+Notice: The Complete mode is not available for the online shiny app because of the data size limitation.
+
+## Algorithm
+
+The phrase terms combined Twitter, Blog, and News were the first to pick through n-gram algorithm. Here, we used 6-gram to catch a short phrase but contains enough information.  
+
+Then the last three words in the input will be used to match with the 6-gram phrases.
+
+The 6-gram phrases contained interesting information then picked through 2-gram algorithm.
+
+And then, the most frequent phrase with the last input word will be the predicted word.
+
+If there is no matched word, the most frequent word "the" will be used as predicted word.
+
+## Project instructions
+
+The goal of this exercise is to create a product to highlight the prediction algorithm that you have built and to provide an interface that can be accessed by others. For this project you must submit:
+
+A Shiny app that takes as input a phrase (multiple words) in a text box input and outputs a prediction of the next word.
+
+A slide deck consisting of no more than 5 slides created with R Studio Presenter (https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations) pitching your algorithm and app as if you were presenting to your boss or an investor.
+
+## Have a good time to use the APP ^^.
+
+Thank you for your time!
